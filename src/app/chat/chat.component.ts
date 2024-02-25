@@ -32,7 +32,7 @@ export class ChatComponent implements OnInit {
 
 
   firstUserName = sessionStorage.getItem('username');
-  senderEmail = sessionStorage.getItem('username');
+  sender = sessionStorage.getItem('username');
   senderCheck = sessionStorage.getItem('username');
 
   constructor(private chatService: ChatService, private router: Router, private userService: UserService) {
@@ -116,7 +116,7 @@ export class ChatComponent implements OnInit {
 
     // This will call the update chat method when ever user send the message
     this.messageObj.replymessage = this.chatForm.value.replymessage;
-    this.messageObj.senderEmail = this.senderEmail;
+    this.messageObj.sender = this.sender;
     this.chatService.updateChat(this.messageObj, this.chatId).subscribe(data => {
       console.log(data);
       this.chatForm.reset();

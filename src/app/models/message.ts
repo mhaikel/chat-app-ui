@@ -1,5 +1,5 @@
 export class Message {
-    senderEmail: string;
+    sender: string;
     time: string;
     replymessage: string;
 
